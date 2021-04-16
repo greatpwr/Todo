@@ -13,13 +13,6 @@ namespace Todo.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\f1_dr\OneDrive\dev\blazor_test\Todo\_Imports.razor"
-using System.Net.Http;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 2 "C:\Users\f1_dr\OneDrive\dev\blazor_test\Todo\_Imports.razor"
 using System.Net.Http.Json;
 
@@ -75,6 +68,13 @@ using Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 1 "C:\Users\f1_dr\OneDrive\dev\blazor_test\Todo\Pages\Todo.razor"
+using System.Net.Http;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/todo")]
     public partial class Todo : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -84,10 +84,18 @@ using Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 18 "C:\Users\f1_dr\OneDrive\dev\blazor_test\Todo\Pages\Todo.razor"
+#line 38 "C:\Users\f1_dr\OneDrive\dev\blazor_test\Todo\Pages\Todo.razor"
        
+    private Drinks[] drinks;
     private List<TodoItem> todos = new();
     private string newTodo;
+
+    protected override async Task OnInitializedAsync() 
+    {
+        drinks = await Http.GetFromJsonAsync<Drinks[]>("http://universities.hipolabs.com/search?country=United+Kingdom");
+        drinks = drinks.Take(10).ToArray();
+    }
+
     private void AddTodo()
     {
         if (!string.IsNullOrWhiteSpace(newTodo))
@@ -100,6 +108,7 @@ using Shared;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591

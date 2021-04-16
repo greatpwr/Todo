@@ -1,4 +1,7 @@
-﻿@page "/todo"
+﻿@using System.Net.Http
+@page "/todo"
+
+@inject HttpClient Http
 
 <h3>Todo (@todos.Count(todo => !todo.IsDone))</h3>
 
@@ -10,14 +13,39 @@
             <input @bind="todo.Title" />
         </li>
     }
+
 </ul>
+
+@if (drinks != null)
+{
+    <div class="dropdown">
+    <button data-toggle="dropdown" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Dropdown button
+    </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            @foreach (var drink in drinks)
+            {
+                <li><a class="dropdown-item" href="#">@drink.Name </a></li>
+            }
+        </ul>
+    </div>
+
+}
 
 <input placeholder="Something todo" @bind="newTodo"/>
 <button class="btn btn-primary" @onclick="AddTodo">Add todo</button>
 
 @code {
+    private Drinks[] drinks;
     private List<TodoItem> todos = new();
     private string newTodo;
+
+    protected override async Task OnInitializedAsync() 
+    {
+        drinks = await Http.GetFromJsonAsync<Drinks[]>("http://universities.hipolabs.com/search?country=United+Kingdom");
+        drinks = drinks.Take(10).ToArray();
+    }
+
     private void AddTodo()
     {
         if (!string.IsNullOrWhiteSpace(newTodo))

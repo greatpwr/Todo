@@ -8,35 +8,35 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": -593205345,
+        "HashCode": -1085269703,
         "Kind": "Components.Component",
-        "Name": "Todo.Pages.Todo",
+        "Name": "Todo.App",
         "AssemblyName": "Todo",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Todo"
+            "TagName": "App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Todo.Pages.Todo"
+          "Common.TypeName": "Todo.App"
         }
       },
       {
-        "HashCode": 1331820977,
+        "HashCode": 82474553,
         "Kind": "Components.Component",
-        "Name": "Todo.Pages.Todo",
+        "Name": "Todo.App",
         "AssemblyName": "Todo",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Todo.Pages.Todo"
+            "TagName": "Todo.App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Todo.Pages.Todo",
+          "Common.TypeName": "Todo.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -140,35 +140,35 @@
         }
       },
       {
-        "HashCode": -1085269703,
+        "HashCode": -593205345,
         "Kind": "Components.Component",
-        "Name": "Todo.App",
+        "Name": "Todo.Pages.Todo",
         "AssemblyName": "Todo",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "Todo"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Todo.App"
+          "Common.TypeName": "Todo.Pages.Todo"
         }
       },
       {
-        "HashCode": 82474553,
+        "HashCode": 1331820977,
         "Kind": "Components.Component",
-        "Name": "Todo.App",
+        "Name": "Todo.Pages.Todo",
         "AssemblyName": "Todo",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Todo.App"
+            "TagName": "Todo.Pages.Todo"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Todo.App",
+          "Common.TypeName": "Todo.Pages.Todo",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
